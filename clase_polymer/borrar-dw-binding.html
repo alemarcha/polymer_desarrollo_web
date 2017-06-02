@@ -1,0 +1,40 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="dw-binding.html">
+
+
+<dom-module id="borrar-dw-binding">
+    <template>
+        <style>
+            :host{
+                background: #de8a0b;
+                padding: 5px 10px;
+                color: aliceblue;
+                font-family: sans-serif;
+                display: block;
+                border-radius: 6px;
+            }
+            p{
+                font-weight: bold;
+            }
+        </style>
+
+        <dw-binding nombre="{{dato}}"></dw-binding>
+       <p> <span on-tap="borrar">Borrar {{dato}} </span></p>
+    </template>
+
+    <script>
+        Polymer({
+            is: "borrar-dw-binding",
+            properties:{
+                dato:{
+                    type:String,
+                    value:"Dedatuld"
+                }
+            },
+            borrar: function(){
+                this.dato = "borrado"
+            }
+        });
+
+    </script>
+</dom-module>
