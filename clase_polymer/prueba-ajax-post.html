@@ -44,6 +44,11 @@
                 this.$.elajax.generateRequest();
             },
             respuesta: function(e, request){
+                if(request.succeeded){
+                    console.log("exito")
+                }else{
+                    console.log("ERROR")
+                }
                 console.log(e,request.status, request.response);
             }
         });
