@@ -1,0 +1,33 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
+
+
+<dom-module id="prueba-ajax">
+
+    <template>
+        <style>
+
+        </style>
+        <iron-ajax
+                auto loading="{{cargando}}" url="https://jsonplaceholder.typicode.com/users" handle-as="json" last-response="{{data}}"
+        ></iron-ajax>
+
+            <paper-spinner active="[[cargando]]">...</paper-spinner>
+
+        <template is="dom-repeat" items="[[data]]" as="user">
+           <p> Nombre: {{user.name}}</p>
+
+        </template>
+
+
+    </template>
+
+    <script>
+        Polymer({
+            is: "prueba-ajax"
+        });
+
+    </script>
+</dom-module>
+
