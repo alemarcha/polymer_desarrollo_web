@@ -1,0 +1,53 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
+
+
+<dom-module id="prueba-ajax-post">
+
+    <template>
+        <style>
+
+        </style>
+        <iron-ajax
+                 id="elajax"
+                 loading="{{cargando}}"
+                 url="https://jsonplaceholder.typicode.com/posts"
+                 handle-as="json"
+                 on-response="respuesta"
+                 method="POST"
+                 content-type="application/json"
+        ></iron-ajax>
+
+            <paper-spinner active="[[cargando]]">...</paper-spinner>
+        <button on-tap="buscar">
+            Buscar
+        </button>
+
+        <template is="dom-repeat" items="[[posts]]" as="post">
+           <p> {{post.name}}</p>
+
+        </template>
+
+
+    </template>
+
+    <script>
+        Polymer({
+            is: "prueba-ajax-post",
+            buscar: function(){
+                this.$.elajax.body = {
+                    title:"foo",
+                    body:"bar",
+                    userid:1
+                }
+                this.$.elajax.generateRequest();
+            },
+            respuesta: function(e, request){
+                console.log(e,request.status, request.response);
+            }
+        });
+
+    </script>
+</dom-module>
+
