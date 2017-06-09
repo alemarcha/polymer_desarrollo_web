@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa firebase</title>
+    <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="../bower_components/iron-icons/av-icons.html">
+    <link rel="import" href="../bower_components/webcomponentsjs/webcomponents-lite.js">
+    <link rel="import" href="../bower_components/polymerfire/firebase-app.html">
+    <link rel="import" href="mapa-marcas.html">
+    <link rel="import" href="localizador-usuario.html">
+
+
+    <style is="custom-syle">
+
+    </style>
+</head>
+<body>
+<firebase-app
+        auth-domain="desarrolloweb-firebase-9f15c.firebaseapp.com"
+        database-url="https://desarrolloweb-firebase-9f15c.firebaseio.com/"
+        api-key="AIzaSyACvuSj9hdHBX77pF1rK8GHXcFSaaB4SZ4"
+        storage-bucket="desarrolloweb-firebase-9f15c.appspot.com"
+        messaging-sender-id="304682483473">
+</firebase-app>
+<localizador-usuario></localizador-usuario>
+<mapa-marcas></mapa-marcas>
+
+
+
+</body>
+</html>
